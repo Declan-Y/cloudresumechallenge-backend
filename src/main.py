@@ -9,6 +9,9 @@ def lambda_handler(event, context):
     
     update_count(current_count)
     return {
+          'headers': {
+            'Access-Control-Allow-Origin': '*'
+        },
          'statusCode': 200,
          'body': json.dumps(current_count)
          
